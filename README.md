@@ -1,6 +1,6 @@
-<h1 align="center">LaurierCSBot</h1>
+<h1 align="center">SherBot</h1>
 <blockquote align="center">
-  <em>LaurierCSBot</em> is the official Discord Bot for the Laurier Computing Society Discord server - powered by SherBot
+  <em>SherBot</em> A lightweight Discord bot that can be used to create any bot! It has all the boilerplate code done for you, and is fully modular! You can add commands, events, and timed tasks - all fully modular!
 </blockquote>
 
 <h2>
@@ -13,6 +13,8 @@ Requirements
 </ul>
 
 <h2>Usage</h2>
+Don't use the example files given - any command named example.*.js won't be loaded by the bot! Copy the example files and rename them to use!.
+
 <h3>
 Commands
 </h3>
@@ -31,4 +33,5 @@ This folder stores functions. Any files that end with ".js" in the tasks folder 
 <h3>
 Embeds
 </h3>
+
 This folder is used to store embeds in their own files to allow cleaner code. These can be imported in files and used as neccessary.
