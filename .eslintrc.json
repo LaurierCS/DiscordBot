@@ -9,22 +9,10 @@
         "ecmaVersion": 12
     },
     "rules": {
-        "indent": [
-            "error",
-            4
-        ],
-        "linebreak-style": [
-            1,
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "double"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ]
+        "indent": ["error", 4],
+        "linebreak-style": [1, "unix"],
+        "quotes": ["error", "double"],
+        "semi": ["error", "always"]
     },
     "no-unused-vars": 1
 }

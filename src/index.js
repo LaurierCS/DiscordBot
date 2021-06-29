@@ -1,9 +1,19 @@
 const fs = require('fs');
 const config = require('../config.json');
 
-const Discord = require('discord.js');
-const discord = new Discord.Client();
-const logger = require('js-logger');
+const Discord = require("discord.js-light");
+const discord = new Discord.Client({
+    cacheGuilds: true,
+    cacheChannels: false,
+    cacheOverwrites: false,
+    cacheRoles: false,
+    cacheEmojis: false,
+    cachePresences: false
+
+});
+
+const logger = require("js-logger");
+const firebase = require("../src/firebase");
 
 let commands = [];
 let events = [];
@@ -17,10 +27,11 @@ let tasks = [];
  * 
  */
 module.exports = {
-    "discord": discord,
-    "logger": logger,
+    discord: discord,
+    logger: logger,
+    firebase: firebase,
 
-}
+};
 
 
 /**
@@ -31,7 +42,7 @@ module.exports = {
  * 
  */
 function main() {
-    discord.once('ready', () => {
+    discord.once("ready", () => {
 
         initLogger();
         setPresence();
@@ -60,7 +71,7 @@ function initLogger() {
         defaultLevel: logger.DEBUG,
 
         formatter: function (messages, context) {
-            messages.unshift(`[${new Date().toUTCString()}] [${context.level.name}]: `)
+            messages.unshift(`[${new Date().toUTCString()}] [${context.level.name}]: `);
 
         }
     });
@@ -79,9 +90,9 @@ function setPresence() {
     discord.user.setPresence({
         status: "dnd",
         activity: {
-            name: "Loading bot...",
+            name: "lauriercs.ca",
             type: "WATCHING",
-            url: null
+            url: "https://lauriercs.ca"
         },
 
         type: "WATCHING"
@@ -98,8 +109,8 @@ function setPresence() {
  */
 function registerCommands() {
     logger.info("Loading commands!");
-    let files = fs.readdirSync('./commands')
-        .filter(file => file.endsWith('.js') && file != 'example.command.js')
+    let files = fs.readdirSync("./commands")
+        .filter(file => file.endsWith(".js") && file != "example.command.js");
 
     for (const file of files) {
         const command = require(`./commands/${file}`);
@@ -120,8 +131,8 @@ function registerCommands() {
  */
 function registerEvents() {
     logger.info("Loading event handlers!");
-    let files = fs.readdirSync('./events')
-        .filter(file => file.endsWith('.js') && file != 'example.event.js');
+    let files = fs.readdirSync("./events")
+        .filter(file => file.endsWith(".js") && file != "example.event.js");
 
     for (const file of files) {
         const event = require(`./events/${file}`);
@@ -147,8 +158,8 @@ function registerEvents() {
  */
 function registerTasks() {
     logger.info("Loading tasks!");
-    let files = fs.readdirSync('./tasks')
-        .filter(file => file.endsWith('.js') && file != 'example.task.js');
+    let files = fs.readdirSync("./tasks")
+        .filter(file => file.endsWith(".js") && file != "example.task.js");
 
     for (const file of files) {
         const task = require(`./tasks/${file}`);
@@ -169,7 +180,7 @@ function registerTasks() {
  */
 function handleCommands() {
     logger.info("Registering commands with the interaction create web socket!");
-    discord.ws.on('INTERACTION_CREATE', async interaction => {
+    discord.ws.on("INTERACTION_CREATE", async interaction => {
         const input = interaction.data.name.toLowerCase();
         for (const command of commands) {
             if (command.data.name == input) {

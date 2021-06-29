@@ -10,28 +10,27 @@
  * 
  */
 module.exports = {
-    "content": "this `supports` __a__ **subset** *of* ~~markdown~~ 😃 ```js\nfunction foo(bar) {\n  console.log(bar);\n}\n\nfoo(1);```",
     "embed": {
-        "title": "title ~~(did you know you can have markdown here too?)~~",
-        "description": "this supports [named links](https://discordapp.com) on top of the previously shown subset of markdown. ```\nyes, even code blocks```",
-        "url": "https://discordapp.com",
-        "color": 16302613,
-        "timestamp": "2021-06-27T23:48:29.142Z",
+        "title": "**Welcome to the Laurier Computing Society Discord server!** :computer: ",
+        "description": "If this is your **first time using Discord**, refer to the Youtube video **[here](https://www.youtube.com/watch?v=TJ13BA3-NR4)!**",
+        "url": "https://lauriercs.ca",
+        "color": 242464,
+        "timestamp": "2021-06-28T18:04:23.154Z",
         "footer": {
             "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png",
             "text": "footer text"
         },
-        "thumbnail": {
-            "url": "https://cdn.discordapp.com/embed/avatars/0.png"
-        },
+
         "image": {
-            "url": "https://cdn.discordapp.com/embed/avatars/0.png"
+            "url": "https://cdn.discordapp.com/embed/avatars/1.png"
         },
+
         "author": {
-            "name": "author name",
+            "name": "",
             "url": "https://discordapp.com",
             "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
         },
+
         "fields": [
             {
                 "name": "🤔",

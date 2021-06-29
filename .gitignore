@@ -1,7 +1,5 @@
 config.json
-.project
-.classpath
-*.class
 .settings
 node_modules
 .eslintrc.json
+.prettierrc.json
