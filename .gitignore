@@ -1,5 +1,3 @@
 config.json
 .settings
 node_modules
-.eslintrc.json
-.prettierrc.json
