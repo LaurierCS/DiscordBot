@@ -1,8 +1,8 @@
 // Config file with all data
-const config = require('../config.json');
+const config = require("./config.json");
 
 // Imports for Google Firebase and Firestore
-const admin = require('firebase-admin');
+const admin = require("firebase-admin");
 admin.initializeApp({
     credential: admin.credential.cert(config.firebase)
 });
@@ -15,7 +15,7 @@ function getCollection(key) {
 }
 
 function getDocumentReference(collection, key) {
-    return collection.doc(key);;
+    return collection.doc(key);
 
 }
 

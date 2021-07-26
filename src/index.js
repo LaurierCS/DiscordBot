@@ -1,15 +1,14 @@
 const fs = require("fs");
-const config = require("../config.json");
+const config = require("./config.json");
 
 const Discord = require("discord.js-light");
 const discord = new Discord.Client({
     cacheGuilds: true,
-    cacheChannels: false,
-    cacheOverwrites: false,
-    cacheRoles: false,
+    cacheChannels: true,
+    cacheOverwrites: true,
+    cacheRoles: true,
     cacheEmojis: false,
-    cachePresences: false
-
+    cachePresences: true
 });
 
 const logger = require("js-logger");

@@ -8,13 +8,13 @@ const logEmbed = require("../embeds/userLog.embed");
 
 /**
  *
- * Logs when a user leaves the server.
- * 
- * @author Nausher Rao
  *
  */
-async function execute(member) {
-    const embed = getLogEmbed(member);
+async function execute(oldMember, newMember) {
+    if (!oldMember || !newMember || oldMember.nickname === newMember.nickname)
+        return;
+
+    const embed = getLogEmbed(oldMember, newMember);
     const globalChannelLog = await discord.channels.fetch(config.channelIds.globalLog);
     const memberChannelLog = await discord.channels.fetch(config.channelIds.memberLog);
 
@@ -23,14 +23,13 @@ async function execute(member) {
 
 }
 
-function getLogEmbed(member) {
-    const user = member.user;
+function getLogEmbed(oldMember, newMember) {
+    const user = newMember.user;
     let embed = logEmbed.embed;
 
-    embed.title = "Message Leave";
-    embed.url = `https://discord.com/users/${member.id}`;
-    embed.description = "";
-    embed.footer.text = `**Member ID:** ${member.id}`;
+    embed.title = "Nickname Change";
+    embed.description = `**Old:** ${oldMember.nickname}\n**New:** ${newMember.nickname}`;
+    embed.footer.text = `**Member ID:** ${newMember.id}`;
     embed.author.name = `${user.username}#${user.discriminator}`;
     embed.author.icon_url = `${user.displayAvatarURL()}`;
     embed.thumbnail.url = `${user.displayAvatarURL()}`;
@@ -38,4 +37,4 @@ function getLogEmbed(member) {
     return embed;
 }
 
-module.exports = { name: "guildMemberRemove", once: false, execute };
+module.exports = { name: "guildMemberUpdate", once: false, execute };

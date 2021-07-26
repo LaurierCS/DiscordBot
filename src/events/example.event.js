@@ -8,12 +8,9 @@ const logger = main.logger;
  * Example command that prints a ready message when the bot turns on.
  *
  */
-module.exports = {
-    name: "ready",
+function execute() {
+    logger.info(`Ready! Logged in as ${discord.user.tag}!`);
 
-    once: true,
+}
 
-    execute: () => {
-        logger.info(`Ready! Logged in as ${discord.user.tag}!`);
-    },
-};
+module.exports = { name: "ready", once: true, execute };

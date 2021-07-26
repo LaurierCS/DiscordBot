@@ -1,11 +1,7 @@
 /**
  * 
- * File that contains an embed to use within different places
- * in the code. 
+ * Embed used in the rules channel.
  * 
- * Reference -> https://discordjs.guide/popular-topics/embeds.html#embed-preview
- * Generator -> https://leovoel.github.io/embed-visualizer/
- *  
  * @author Nausher Rao
  * 
  */
@@ -25,7 +21,7 @@ const embed = {
     },
 
     "author": {
-        "name": "hey",
+        "name": "",
         "url": "https://discordapp.com",
         "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
     },

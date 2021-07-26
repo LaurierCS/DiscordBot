@@ -6,9 +6,9 @@
  * 
  */
 const embed = {
-    "title": "Action Here",
-    "description": "**Sent:** Message Here",
-    "url": "URL HERE",
+    "title": "User Help",
+    "description": "\"Message Here\"",
+    "url": "https://discord.com/users/USERIDHERE",
     "color": 2897988,
     "footer": {
         "text": "**ID:** ID Here"
