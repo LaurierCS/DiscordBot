@@ -1,31 +1,32 @@
 {
-  "dependencies": {
-    "discord.js": "^12.5.3",
-    "discord.js-light": "^3.5.11",
-    "firebase": "^8.6.8",
-    "firebase-admin": "^9.10.0",
-    "js-logger": "^1.6.1"
-  },
-  "devDependencies": {
-    "eslint": "^7.28.0",
-    "prettier": "2.3.1",
-    "prettier-eslint": "^12.0.0"
-  },
-  "name": "lauriercsbot",
-  "description": "<h1 align=\"center\">SherBot</h1>\r <blockquote align=\"center\">\r   <em>SherBot</em> A lightweight skeleton for a Discord bot that can be used to create any bot! It has all the boilerplate code done for you, and is fully modular! You can add commands, events, and timed tasks - all fully modular!\r </blockquote>",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LaurierCS/DiscordBot.git"
-  },
-  "author": "Nausher Rao",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/LaurierCS/DiscordBot/issues"
-  },
-  "homepage": "https://github.com/LaurierCS/DiscordBot#readme"
+    "dependencies": {
+        "discord.js": "^12.5.3",
+        "discord.js-light": "^3.5.11",
+        "firebase": "^8.6.8",
+        "firebase-admin": "^9.10.0",
+        "js-logger": "^1.6.1"
+    },
+    "devDependencies": {
+        "eslint": "^7.28.0",
+        "prettier": "2.3.1",
+        "prettier-eslint": "^12.0.0"
+    },
+    "name": "lauriercsbot",
+    "description": "SherBot is a lightweight skeleton for a Discord bot that can be used to create any bot! It has all the boilerplate code done for you, and is fully modular! You can add commands, events, and timed tasks - all fully modular!\r </blockquote>",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "cd src && node index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/LaurierCS/DiscordBot.git"
+    },
+    "author": "Nausher Rao",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/LaurierCS/DiscordBot/issues"
+    },
+    "homepage": "https://github.com/LaurierCS/DiscordBot#readme"
 }

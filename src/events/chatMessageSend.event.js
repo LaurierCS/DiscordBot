@@ -16,8 +16,10 @@ async function execute(message) {
     if (message.system || message.guild == null || message.member == null || message.member.user.id == discord.user.id)
         return;
 
-    if (message.channel.parentID == config.categoryIds.important || message.channel.type == "news")
+    if (message.channel.parentID == config.categoryIds.important || message.channel.type == "news") {
         reactToAnnouncementMessage(message);
+
+    }
 
     logModeratorActivity(message);
     logRegularActivity(message);
@@ -51,8 +53,14 @@ async function logRegularActivity(message) {
 
 function reactToAnnouncementMessage(message) {
     const server = message.guild;
-    const emojis = server.emojis.cache.random(11);
-    emojis.forEach(emoji => message.react(emoji));
+    // config.reactionEmojiIds.forEach(emojiId => {
+    //     const emoji = server.emojis.fetch(emojiId);
+    //     message.react(emoji);
+
+    // });
+
+    // const emojis = server.emojis.cache.random(11);
+    // emojis.forEach(emoji => message.react(emoji));
 
 }
 

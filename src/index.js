@@ -3,12 +3,14 @@ const config = require("./config.json");
 
 const Discord = require("discord.js-light");
 const discord = new Discord.Client({
+    
     cacheGuilds: true,
     cacheChannels: true,
     cacheOverwrites: true,
     cacheRoles: true,
     cacheEmojis: false,
-    cachePresences: true
+    cachePresences: true,
+
 });
 
 const logger = require("js-logger");

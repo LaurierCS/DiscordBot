@@ -27,7 +27,7 @@ function getLogEmbed(member) {
     const user = member.user;
     let embed = logEmbed.embed;
 
-    embed.title = "Message Leave";
+    embed.title = "Member Leave";
     embed.url = `https://discord.com/users/${member.id}`;
     embed.description = "";
     embed.footer.text = `**Member ID:** ${member.id}`;

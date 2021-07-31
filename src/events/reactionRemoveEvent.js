@@ -13,23 +13,49 @@ const config = require("../config.json");
  *
  */
 async function execute(reaction, user) {
-    console.log("remove1");
-
     let message = reaction.message;
     let server = message.guild;
+    let emoji_id = reaction.emoji.name;
+
     if (message.id == config.messageIds.courseRoleReaction) {
-        let emoji_id = reaction.emoji.identifier;
+        const roleId = config.roleIds.reactionRoles.courses[emoji_id];
+        if (!roleId)
+            return;
 
-        for (const role_key in config.reactionRoleIds) {
-            if (emoji_id == role_key) {
-                const member = await server.members.fetch({ user, force: true });
-                const role_id = config.reactionRoleIds[emoji_id];
-                const role = await server.roles.fetch(role_id);
-                await member.roles.remove(role);
+        const member = await server.members.fetch(user.id);
+        await member.roles.remove(roleId);
 
-            }
-        }
+        const courseRoles = Object.values(config.roleIds.reactionRoles.courses);
+        const headerRoleId = config.roleIds.reactionRoles.headers.courses;
+        await deleteHeaderRole(member, courseRoles, headerRoleId);
+
+    } else if (message.id == config.messageIds.interestRoleReaction) {
+        const roleId = config.roleIds.reactionRoles.interests[emoji_id];
+        if (!roleId)
+            return;
+
+        const member = await server.members.fetch(user.id);
+        await member.roles.remove(roleId);
+
+        const interestRoles = Object.values(config.roleIds.reactionRoles.interests);
+        const headerRoleId = config.roleIds.reactionRoles.headers.interests;
+        await deleteHeaderRole(member, interestRoles, headerRoleId);
+
+
     }
+}
+
+async function deleteHeaderRole(member, targetRoles, headerRoleId) {
+    let memberRoleIds = [];
+    member.roles.cache.each(role => memberRoleIds.push(role.id));
+
+    let anyRolesLeft = false;
+    for (let i = 0; i < targetRoles.length && !anyRolesLeft; i++)
+        anyRolesLeft = memberRoleIds.includes(targetRoles[i]);
+
+    if (!anyRolesLeft)
+        await member.roles.remove(headerRoleId);
+
 }
 
 module.exports = { name: "messageReactionRemove", once: false, execute };
