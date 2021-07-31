@@ -7,6 +7,8 @@ const bot = require("./index");
  *
  * @param {string} message The message to send to the channel.
  * @param {any} interaction The interaction data to respond to.
+ * @author Nausher Rao
+ * 
  */
 function sendMessage(message, interaction) {
     bot.discord.api.interactions(interaction.id, interaction.token).callback.post({
@@ -22,6 +24,8 @@ function sendMessage(message, interaction) {
  *
  * @param {any} embed The embed to send to the channel.
  * @param {any} interaction The interaction data to respond to.
+ * @author Nausher Rao
+ * 
  */
 function sendEmbed(embed, interaction) {
     bot.discord.api.interactions(interaction.id, interaction.token).callback.post({
@@ -30,38 +34,4 @@ function sendEmbed(embed, interaction) {
     });
 }
 
-/**
- *
- * Respond to a slash command interaction with a success handshake.
- *
- * @param {any} embed The embed to send to the channel.
- * @param {any} interaction The interaction data to respond to.
- */
-function sendSuccess(interaction) {
-    bot.discord.api.interactions(interaction.id, interaction.token).callback.post({
-        data: { type: 5 }
-    });
-
-}
-
-function getAllCourseChannels() {
-    const regex = "(ma|cp|pc|ds|st)([0-9])([0-9])([0-9])";
-
-}
-
-function getAllMAChannels() {
-    const regex = "(ma)([0-9])([0-9])([0-9])";
-
-}
-
-function getAllCSChannels() {
-    const regex = "(cp)([0-9])([0-9])([0-9])";
-
-}
-
-function getAllPCChannels() {
-    const regex = "(cp)([0-9])([0-9])([0-9])";
-
-}
-
-module.exports = { sendMessage, sendEmbed, sendSuccess };
+module.exports = { sendMessage, sendEmbed };
