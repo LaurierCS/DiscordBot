@@ -34,4 +34,4 @@ const data = {
     ],
 };
 
-module.exports = { data, execute };
+module.exports = { data: data, execute: execute, enabled: true };

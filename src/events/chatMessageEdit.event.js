@@ -3,9 +3,7 @@ const main = require("../index");
 const discord = main.discord;
 const logger = main.logger;
 
-const config = require("../config.json");
-const firebase = main.firebase;
-
+const config = require("../config.js");
 const logEmbed = require("../embeds/userLog.embed");
 
 /**
@@ -13,7 +11,7 @@ const logEmbed = require("../embeds/userLog.embed");
  * 
  */
 async function execute(oldMessage, newMessage) {
-    if (newMessage.member.user.id == discord.user.id)
+    if (!newMessage || !oldMessage || oldMessage.system || newMessage.system || !oldMessage.member || !newMessage.member || newMessage.member.user.id == discord.user.id || newMessage.guild.id != config.server)
         return;
 
     logRegularActivity(oldMessage, newMessage);
@@ -27,6 +25,7 @@ async function logRegularActivity(oldMessage, newMessage) {
     await globalChannelLog.send({ embed: embed });
     await messageChannelLog.send({ embed: embed });
 
+    logger.debug("Logged message edit!");
 }
 
 function getLogEmbed(oldMessage, newMessage) {
@@ -45,4 +44,4 @@ function getLogEmbed(oldMessage, newMessage) {
     return embed;
 }
 
-module.exports = { name: "messageUpdate", once: false, execute };
+module.exports = { name: "messageUpdate", once: false, execute: execute, enabled: true };

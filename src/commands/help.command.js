@@ -3,11 +3,13 @@ const main = require("../index");
 const discord = main.discord;
 const logger = main.logger;
 
-const config = require("../config.json");
+const config = require("../config.js");
 const helpEmbed = require("../embeds/help.embed");
 
 /**
  * 
+ * Command that lets a use ask the moderator team for 
+ * help with a custom message.
  * 
  * @author Nausher Rao
  * 
@@ -22,7 +24,7 @@ async function execute(interaction) {
 
     const embed = getHelpEmbed(member, message);
     const helpChannel = await discord.channels.fetch(config.channelIds.help);
-    await helpChannel.send({ content: "@Moderator", embed: embed });
+    await helpChannel.send({ content: "<@816336112359833621>", embed: embed });
 
     util.sendMessage("A moderator will be in contact with you shortly!", interaction);
 
@@ -56,4 +58,4 @@ const data = {
     ],
 };
 
-module.exports = { data, execute };
+module.exports = { data: data, execute: execute, enabled: true };

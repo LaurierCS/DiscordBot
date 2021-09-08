@@ -1,3 +1,4 @@
 config.json
 .settings
 node_modules
+.env

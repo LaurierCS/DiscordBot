@@ -3,9 +3,7 @@ const main = require("../index");
 const discord = main.discord;
 const logger = main.logger;
 
-const config = require("../config.json");
-const firebase = main.firebase;
-
+const config = require("../config.js");
 const logEmbed = require("../embeds/userLog.embed");
 
 /**
@@ -16,29 +14,13 @@ async function execute(message) {
     if (message.system || message.guild == null || message.member == null || message.member.user.id == discord.user.id)
         return;
 
-    if (message.channel.parentID == config.categoryIds.important || message.channel.type == "news") {
+    if (message.guild.id != config.server)
+        return;
+
+    if (message.channel.parentID == config.categoryIds.important || message.channel.type == "news")
         reactToAnnouncementMessage(message);
 
-    }
-
-    logModeratorActivity(message);
     logRegularActivity(message);
-}
-
-async function logModeratorActivity(message) {
-    const member = message.member;
-    const userID = message.author.id;
-    const isMod = member.roles.cache.some(role => role.id == config.roleIds.moderator);
-
-    if (isMod) {
-        const col = firebase.getCollection("users");
-        const ref = firebase.getDocumentReference(col, "moderator");
-        const doc = await ref.get();
-
-        let data = doc.data();
-        data[userID] = data[userID] ? data[userID] + 1 : 1;
-        await ref.set(data);
-    }
 }
 
 async function logRegularActivity(message) {
@@ -49,19 +31,14 @@ async function logRegularActivity(message) {
     await globalChannelLog.send({ embed: embed });
     await messageChannelLog.send({ embed: embed });
 
+    logger.debug("Logged message send!");
 }
 
-function reactToAnnouncementMessage(message) {
-    const server = message.guild;
-    // config.reactionEmojiIds.forEach(emojiId => {
-    //     const emoji = server.emojis.fetch(emojiId);
-    //     message.react(emoji);
+async function reactToAnnouncementMessage(message) {
+    for (const emoji of config.reactionEmojiIds)
+        await message.react(emoji);
 
-    // });
-
-    // const emojis = server.emojis.cache.random(11);
-    // emojis.forEach(emoji => message.react(emoji));
-
+    logger.debug("Added reaction to announcement message!");
 }
 
 function getLogEmbed(message) {
@@ -80,4 +57,4 @@ function getLogEmbed(message) {
     return embed;
 }
 
-module.exports = { name: "message", once: false, execute };
+module.exports = { name: "message", once: false, execute: execute, enabled: true };

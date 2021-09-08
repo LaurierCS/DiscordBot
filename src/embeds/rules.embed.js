@@ -6,48 +6,93 @@
  * 
  */
 const embed = {
-    "title": "**Welcome to the Laurier Computing Society Discord server!** :computer: ",
-    "description": "If this is your **first time using Discord**, refer to the Youtube video **[here](https://www.youtube.com/watch?v=TJ13BA3-NR4)!**",
-    "url": "https://lauriercs.ca",
+    "title": "📜 ** Rules - Laurier Computing Society Discord Server** ",
+    "description": "If you're in the Discord, you should have to accept the ToS before being able to access any channels! - The rules you have to abide by can be found here!",
     "color": 2897988,
-    "timestamp": "2021-06-28T18:04:23.154Z",
     "footer": {
-        "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png",
-        "text": "footer text"
+        "text": "Rules last updated September 7th, 2021"
     },
 
-    "image": {
-        "url": "https://cdn.discordapp.com/embed/avatars/1.png"
-    },
-
-    "author": {
-        "name": "",
-        "url": "https://discordapp.com",
-        "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png"
+    "thumbnail": {
+        "url": "https://raw.githubusercontent.com/LaurierCS/DiscordBot/main/resources/icon.png"
     },
 
     "fields": [
         {
-            "name": "🤔",
-            "value": "some of these properties have certain limits..."
+            "name": "📛 **Naming**",
+            "value": `• No blank nicknames.
+            • No inappropriate nicknames.
+            • No sexually explicit nicknames.
+            • No offensive nicknames.
+            • Moderators reserve the right to change nicknames.`
         },
+
         {
-            "name": "😱",
-            "value": "try exceeding some of them!"
+            "name": "\u200B",
+            "value": "\u200B",
         },
+
         {
-            "name": "🙄",
-            "value": "an informative error should show up, and this view will remain as-is until all issues are fixed"
+            "name": "📷 **Profile Pictures**",
+            "value": `• No inappropriate profile pictures.
+            • No sexually explicit profile pictures.
+            • No offensive profile pictures.`
         },
+
         {
-            "name": "<:thonkang:219069250692841473>",
-            "value": "these last two",
-            "inline": true
+            "name": "\u200B",
+            "value": "\u200B",
         },
+
         {
-            "name": "<:thonkang:219069250692841473>",
-            "value": "are inline fields",
-            "inline": true
+            "name": "💬 **Text Channels/Chats**",
+            "value": `• No questioning the mods.
+            • @mention the moderators for support.
+            • No @mentioning spam.
+            • No sexually explicit content.
+            • No pornographic content.
+            • No NSFW content.
+            • No illegal content.
+            • No publishing of personal information (including real names, addresses, emails, passwords, bank account and credit card information, etc.).
+            • No personal attacks.
+            • No witch hunting.
+            • No harassment.
+            • No sexism, racism, or any isms.
+            • No hate speech.
+            • No sexual or political discussions.
+            • No flaming.
+            • No trolling.m
+            • No spamming of ANY kind.
+            • Moderators reserve the right to delete any post.
+            • Moderators reserve the right to edit any post.
+            • No advertisement without permission.
+            • Use the right text channel for the topic you wish to discuss.`
+        },
+
+        {
+            "name": "\u200B",
+            "value": "\u200B",
+        },
+
+        {
+            "name": "🎤 Voice Channels/Chats",
+            "value": `• No annoying, loud or high pitch noises.
+            • Reduce the amount of background noise, if possible.
+            • Moderators reserve the right to disconnect you from a voice channel if your sound quality is poor.
+            • Moderators reserve the right to disconnect, mute, deafen, or move members to and from voice channels.`,
+        },
+
+        {
+            "name": "\u200B",
+            "value": "\u200B",
+        },
+
+        {
+            "name": "😎 General",
+            "value": `• Moderators reserve the right to use their own discretion regardless of any rule.
+            • No exploiting loopholes in the rules (please report them).
+            • Rules apply to DMing other members of the server.
+            • No bugs, exploits, glitches, hacks, bugs, etc.`,
         }
     ]
 };

@@ -3,9 +3,7 @@ const main = require("../index");
 const discord = main.discord;
 const logger = main.logger;
 
-const config = require("../config.json");
-const firebase = main.firebase;
-
+const config = require("../config.js");
 const logEmbed = require("../embeds/userLog.embed");
 
 /**
@@ -13,7 +11,7 @@ const logEmbed = require("../embeds/userLog.embed");
  * 
  */
 async function execute(message) {
-    if (message.system || message.guild == null || message.member == null || message.member.user.id == discord.user.id)
+    if (message.system || message.guild == null || message.member == null || message.member.user.id == discord.user.id || message.guild.id != config.server)
         return;
 
     logRegularActivity(message);
@@ -27,6 +25,7 @@ async function logRegularActivity(message) {
     await globalChannelLog.send({ embed: embed });
     await messageChannelLog.send({ embed: embed });
 
+    logger.debug("Logged message delete!");
 }
 
 function getLogEmbed(message) {
@@ -45,4 +44,4 @@ function getLogEmbed(message) {
     return embed;
 }
 
-module.exports = { name: "messageDelete", once: false, execute };
+module.exports = { name: "messageDelete", once: false, execute: execute, enabled: true };

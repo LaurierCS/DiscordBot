@@ -3,9 +3,9 @@ const main = require("../index");
 const discord = main.discord;
 const logger = main.logger;
 
-const config = require("../config.json");
+const config = require("../config.js");
 const logEmbed = require("../embeds/userLog.embed");
-const welcomeEmbed = require("../embeds/welcome.embed");
+const welcomeEmbed = require("../embeds/welcomeDM.embed");
 
 /**
  *
@@ -21,8 +21,19 @@ async function execute(member) {
 
     await globalChannelLog.send({ embed: embed });
     await memberChannelLog.send({ embed: embed });
-    await member.roles.add(config.roleIds.join);
-    await sendWelcomeMessage(member);
+    logger.debug("Logged member join!");
+
+    for (const roleId of config.roleIds.join)
+        await member.roles.add(roleId);
+    logger.debug("Given new member join roles!");
+
+    try {
+        await sendWelcomeMessage(member);
+        logger.debug("Sent new member welcome DM!");
+
+    } catch (error) {
+        logger.error("Couldn't send welcome DM to new member!");
+    }
 }
 
 async function sendWelcomeMessage(member) {
@@ -30,7 +41,6 @@ async function sendWelcomeMessage(member) {
     const embed = welcomeEmbed.embed;
 
     await dm.send("Welcome!", { embed: embed });
-
 }
 
 function getLogEmbed(member) {
@@ -40,7 +50,7 @@ function getLogEmbed(member) {
     embed.title = "Member Join";
     embed.url = `https://discord.com/users/${member.id}`;
     embed.description = "";
-    embed.footer.text = `**Member ID:** ${member.id}`;
+    embed.footer.text = `Member ID: ${member.id}`;
     embed.author.name = `${user.username}#${user.discriminator}`;
     embed.author.icon_url = `${user.displayAvatarURL()}`;
     embed.thumbnail.url = `${user.displayAvatarURL()}`;
@@ -48,4 +58,4 @@ function getLogEmbed(member) {
     return embed;
 }
 
-module.exports = { name: "guildMemberAdd", once: false, execute };
+module.exports = { name: "guildMemberAdd", once: false, execute: execute, enabled: true };

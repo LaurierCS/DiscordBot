@@ -1,5 +1,5 @@
 // Config file with all data
-const config = require("./config.json");
+const config = require("./config");
 
 // Imports for Google Firebase and Firestore
 const admin = require("firebase-admin");

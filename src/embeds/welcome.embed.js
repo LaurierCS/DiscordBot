@@ -6,61 +6,63 @@
  * 
  */
 const embed = {
-    "title": "💻 **Welcome to the Laurier Computing Society Discord server!**",
-    "description": "If this is your **first time using Discord**, refer to the Youtube video **[here](https://www.youtube.com/watch?v=TJ13BA3-NR4)!**",
+    "title": "💻 **Welcome - Laurier Computing Society Discord Server**",
+    "description": "We are the official student operated society of Wilfrid Laurier University’s Computer Science department.",
     "url": "https://lauriercs.ca",
     "color": 2897988,
 
     "author": {
-        "name": "👋 Welcome!",
+        "name": "👋 Welcome!"
     },
 
     "thumbnail": {
-        "url": "https://raw.githubusercontent.com/LaurierCS/Website/main/assets/icon.png"
+        "url": "https://raw.githubusercontent.com/LaurierCS/DiscordBot/main/resources/icon.png"
     },
 
     "fields": [
         {
-            "name": "📜 Rules",
-            "value": "Make sure to check out the rules channel to read up on all our rules! You must accept the ToS before being able to use the server!",
-            "inline": false
-        },
-
-
-        {
-            "name": "\u200B",
-            "value": "\u200B",
-
-        },
-
-        {
-            "name": "⚽️ Interests",
-            "value": "We have reaction roles so that you can give yourself access to different channels for different interests, such as sports, crypto, etc...",
-            "inline": false
+            "name": "❓ Who are we?",
+            "value": "Laurier Computing Society is the official student operated society of Wilfrid Laurier University’s Computer Science department. We strive to help students realise their potential in STEM by enriching their academic and professional development. Our objective is to create initiatives and events to involve students in tech to challenge and improve their skills, and foster a sense of community.",
         },
 
         {
             "name": "\u200B",
             "value": "\u200B",
-
         },
 
         {
-            "name": "🎓 Courses",
-            "value": "We also have reaction roles you can give yourself for different courses to talk with others about them!",
-            "inline": false
+            "name": "💰 Can I get free stuff?!?!?!",
+            "value": "We do monthly money gift card giveaways on our socials, so follow us there! As well as that, all our in person events have free food and refreshments!",
         },
 
         {
             "name": "\u200B",
             "value": "\u200B",
-
         },
 
         {
-            "name": "🏫 The Club",
-            "value": "Learn more about the club **[here](https://lauriercs.ca)!",
-            "inline": false
+            "name": "🏆 So... what type of events do you run?",
+            "value": "We run a wide range of events. We have our signature 'Meet the Professionals' events that let students and professionals connect and get information about the industry. We also run events such as our “Learn a Tool Series”, where we showcase and preview different popular technologies used in the industry that can help students personally, in projects, or in their careers. We also run fun events, such as regular socials, gaming events, and competitions! Stay tuned on our socials to learn more!",
+        },
+
+        {
+            "name": "\u200B",
+            "value": "\u200B",
+        },
+
+        {
+            "name": "📋 This sounds sick! How do I join?!?!?",
+            "value": "You don't have to do anything special! Just attend 2 of our events a term to be considered a part of the club! If you want to be a part of the executive team, feel free to contact any of the executive members for more information!",
+        },
+
+        {
+            "name": "\u200B",
+            "value": "\u200B",
+        },
+
+        {
+            "name": "🏫 Where do I learn more???",
+            "value": "Learn more about the club **[here](https://lauriercs.ca)**!",
         },
     ]
 };

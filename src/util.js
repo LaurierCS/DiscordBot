@@ -136,4 +136,4 @@ function hasAllPermissions(member, ...permissions) {
 }
 
 
-module.exports = { sendMessage, sendEmbed, hasRole, hasAnyRole, hasAllRoles, hasPermission, hasAnyPermissions, hasAllPermissions };
+module.exports = { sendMessage, sendEmbed, hasRole, hasAnyRoles, hasAllRoles, hasPermission, hasAnyPermissions, hasAllPermissions };

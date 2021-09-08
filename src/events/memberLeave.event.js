@@ -3,7 +3,7 @@ const main = require("../index");
 const discord = main.discord;
 const logger = main.logger;
 
-const config = require("../config.json");
+const config = require("../config.js");
 const logEmbed = require("../embeds/userLog.embed");
 
 /**
@@ -20,6 +20,7 @@ async function execute(member) {
 
     await globalChannelLog.send({ embed: embed });
     await memberChannelLog.send({ embed: embed });
+    logger.debug("Logged member leave!");
 
 }
 
@@ -30,7 +31,7 @@ function getLogEmbed(member) {
     embed.title = "Member Leave";
     embed.url = `https://discord.com/users/${member.id}`;
     embed.description = "";
-    embed.footer.text = `**Member ID:** ${member.id}`;
+    embed.footer.text = `Member ID: ${member.id}`;
     embed.author.name = `${user.username}#${user.discriminator}`;
     embed.author.icon_url = `${user.displayAvatarURL()}`;
     embed.thumbnail.url = `${user.displayAvatarURL()}`;
@@ -38,4 +39,4 @@ function getLogEmbed(member) {
     return embed;
 }
 
-module.exports = { name: "guildMemberRemove", once: false, execute };
+module.exports = { name: "guildMemberRemove", once: false, execute: execute, enabled: true };

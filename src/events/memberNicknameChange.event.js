@@ -3,7 +3,7 @@ const main = require("../index");
 const discord = main.discord;
 const logger = main.logger;
 
-const config = require("../config.json");
+const config = require("../config.js");
 const logEmbed = require("../embeds/userLog.embed");
 
 /**
@@ -11,7 +11,7 @@ const logEmbed = require("../embeds/userLog.embed");
  *
  */
 async function execute(oldMember, newMember) {
-    if (!oldMember || !newMember || oldMember.nickname === newMember.nickname)
+    if (!oldMember || !newMember || oldMember.nickname === newMember.nickname || newMember.guild.id != config.server)
         return;
 
     const embed = getLogEmbed(oldMember, newMember);
@@ -20,7 +20,7 @@ async function execute(oldMember, newMember) {
 
     await globalChannelLog.send({ embed: embed });
     await memberChannelLog.send({ embed: embed });
-
+    logger.debug("Logged member nickname change!");
 }
 
 function getLogEmbed(oldMember, newMember) {
@@ -29,7 +29,7 @@ function getLogEmbed(oldMember, newMember) {
 
     embed.title = "Nickname Change";
     embed.description = `**Old:** ${oldMember.nickname}\n**New:** ${newMember.nickname}`;
-    embed.footer.text = `**Member ID:** ${newMember.id}`;
+    embed.footer.text = `Member ID: ${newMember.id}`;
     embed.author.name = `${user.username}#${user.discriminator}`;
     embed.author.icon_url = `${user.displayAvatarURL()}`;
     embed.thumbnail.url = `${user.displayAvatarURL()}`;
@@ -37,4 +37,4 @@ function getLogEmbed(oldMember, newMember) {
     return embed;
 }
 
-module.exports = { name: "guildMemberUpdate", once: false, execute };
+module.exports = { name: "guildMemberUpdate", once: false, execute: execute, enabled: true };

@@ -3,11 +3,12 @@ const main = require("../index");
 const discord = main.discord;
 const logger = main.logger;
 
-const config = require("../config.json");
+const config = require("../config.js");
 const reportEmbed = require("../embeds/report.embed");
 
 /**
- * 
+ * Command that lets a use report a specific user to the
+ * moderator team to be reviewed.
  * 
  * @author Nausher Rao
  * 
@@ -24,7 +25,7 @@ async function execute(interaction) {
 
     const embed = getReportEmbed(targetMember, member, message);
     const reportChannel = await discord.channels.fetch(config.channelIds.report);
-    await reportChannel.send({ embed: embed });
+    await reportChannel.send({ content: "<@816336112359833621>", embed: embed });
 
     util.sendMessage("A moderator will be in contact with you shortly!", interaction);
 
@@ -67,4 +68,4 @@ const data = {
     ],
 };
 
-module.exports = { data, execute };
+module.exports = { data: data, execute: execute, enabled: true };

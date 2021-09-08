@@ -1,5 +1,6 @@
+require("dotenv").config();
 const fs = require("fs");
-const config = require("./config.json");
+const config = require("./config");
 
 const Discord = require("discord.js-light");
 const discord = new Discord.Client({
@@ -14,7 +15,7 @@ const discord = new Discord.Client({
 });
 
 const logger = require("js-logger");
-const firebase = require("../src/firebase");
+//const firebase = require("../src/firebase");
 
 /** Stores all the command files that are registered by the program. */
 let commands = [];
@@ -48,7 +49,7 @@ function main() {
         logger.info("Bot loaded!");
     });
 
-    discord.login(config.token);
+    discord.login(process.env.TOKEN);
 }
 
 

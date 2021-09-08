@@ -25,4 +25,4 @@ const data = {
     default_permission: true,
 };
 
-module.exports = { data, execute };
+module.exports = { data: data, execute: execute, enabled: true };
