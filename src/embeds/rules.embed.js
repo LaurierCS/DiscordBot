@@ -45,7 +45,7 @@ const embed = {
         },
 
         {
-            "name":"🏷️ **Advertising/Solicitation**"
+            "name":"🏷️ **Advertising/Solicitation**",
             "value":`• All advertisements for services, clubs or events must be discussed with moderators before posting.
             • No NFT, Crypto and Financial service advertisements .
             • Job postings must be posted from official job boards or company webpages.
