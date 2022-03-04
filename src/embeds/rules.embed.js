@@ -45,6 +45,21 @@ const embed = {
         },
 
         {
+            "name":"🏷️ **Advertising/Solicitation**",
+            "value":`• All advertisements for services, clubs or events must be discussed with moderators before posting.
+            • No NFT, Crypto and Financial service advertisements .
+            • Job postings must be posted from official job boards or company webpages.
+            • No advertisements for services in breach of academic misconduct policies.
+            • All advertisements posted in this server should be open to discussion within this server.
+            `
+        },
+
+        {
+            "name": "\u200B",
+            "value": "\u200B",
+        },
+
+        {
             "name": "💬 **Text Channels/Chats**",
             "value": `• No questioning the mods.
             • @mention the moderators for support.
@@ -65,7 +80,6 @@ const embed = {
             • No spamming of ANY kind.
             • Moderators reserve the right to delete any post.
             • Moderators reserve the right to edit any post.
-            • No advertisement without permission.
             • Use the right text channel for the topic you wish to discuss.`
         },
 
@@ -92,7 +106,8 @@ const embed = {
             "value": `• Moderators reserve the right to use their own discretion regardless of any rule.
             • No exploiting loopholes in the rules (please report them).
             • Rules apply to DMing other members of the server.
-            • No bugs, exploits, glitches, hacks, bugs, etc.`,
+            • No bugs, exploits, glitches, hacks, bugs, etc.
+            • Ban evasion is not tolerated. Contact the moderators directly if you believe a ban was in error.`,
         }
     ]
 };
