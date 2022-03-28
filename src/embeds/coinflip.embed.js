@@ -6,7 +6,6 @@
  *
  */
 const embed = {
-    "description": "**You got heads!**",
     "color": 2897988,
     "author": {
         "name": "💰 Coin Flip",
