@@ -16,6 +16,9 @@ function execute(interaction) {
     if (Math.random() < .5)
         coinflipEmbed.embed.description = "**You got tails!**";
 
+    else
+        coinflipEmbed.embed.description = "**You got heads!**";
+
     util.sendEmbed(coinflipEmbed.embed, interaction);
 }
 
