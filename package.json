@@ -4,7 +4,7 @@
         "discord.js-light": "^3.0.6",
         "dotenv": "^10.0.0",
         "firebase": "^8.6.8",
-        "firebase-admin": "^9.10.0",
+        "firebase-admin": "^11.0.1",
         "js-logger": "^1.6.1"
     },
     "devDependencies": {
