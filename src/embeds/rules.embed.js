@@ -50,6 +50,7 @@ const embed = {
             • No NFT, Crypto and Financial service advertisements .
             • Job postings must be posted from official job boards or company webpages.
             • No advertisements for services in breach of academic misconduct policies.
+            • No advertisements/links for external Discord servers without moderator approval.
             • All advertisements posted in this server should be open to discussion within this server.
             `
         },
