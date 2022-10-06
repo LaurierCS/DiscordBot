@@ -6,14 +6,14 @@ module.exports = {
     },
 
     "channelIds": {
-        "alerts": "883424193306304514",
-        "globalLog": "883424133608788019",
-        "messageSendLog": "883424148322398218",
-        "messageEditLog": "883424164952829983",
-        "memberLog": "883424180345901137",
+        "alerts": "978036798259363891", // Internal Server
+        "globalLog": "978036798259363893", // Internal Server
+        "messageSendLog": "978036798259363894", // Internal Server
+        "messageEditLog": "978036798259363895", // Internal Server
+        "memberLog": "978036798259363896", // Internal Server
 
-        "help": "883424072304820256",
-        "report": "883424084422197308",
+        "help": "978036798024478769", // Internal Server
+        "report": "978036798259363890", // Internal Server
 
         "rules": "842899138303623201",
         "welcome": "773020525307101244",
