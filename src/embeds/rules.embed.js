@@ -7,10 +7,11 @@
  */
 const embed = {
     "title": "📜 ** Rules - Laurier Computing Society Discord Server** ",
-    "description": "If you're in the Discord, you should have to accept the ToS before being able to access any channels! - The rules you have to abide by can be found here!",
+    "description": "The LCS Discord server strives to provide a safe, accessible space for members of Laurier’s Mathematics and Computer Science programs to collaborate, study and connect. The following rules are in place to help further this goal. Failure to follow these rules may result in a ban, denying you access to the resources this server provides.",
     "color": 2897988,
     "footer": {
-        "text": "Rules last updated September 7th, 2021"
+        "text": `Moderators reserve the right to use their own discretion in the enforcement of server rules.
+        Rules last updated Feb 15th, 2023`
     },
 
     "thumbnail": {
@@ -19,12 +20,17 @@ const embed = {
 
     "fields": [
         {
-            "name": "📛 **Naming**",
-            "value": `• No blank nicknames.
-            • No inappropriate nicknames.
-            • No sexually explicit nicknames.
-            • No offensive nicknames.
-            • Moderators reserve the right to change nicknames.`
+            "name": "💬 **General Behaviour**",
+            "value": `- Treat others with the same level of respect and courtesy you would like to be treated
+            - No harassment or bullying of individuals or groups
+            - Hate speech, sexism, racially charged remarks or use of slurs will not be tolerated
+            - Do not publish personal details of others or yourself. This includes phone numbers, addresses, payment details, etc.
+            - Do not post sexually explicit or pornographic content
+            - Refrain from political discussion. This is not a political server.
+            - Please use the channels relevant to your topic of discussion
+            - Disruptive noises and soundboards are not tolerated in voice channels
+            - Ban evasion is not tolerated. If you believe your ban was in error, please contact a member of the moderation team to start an appeal.
+            - Avoid spreading misinformation/disinformation. Use reputable sources, and don’t give advice where you aren’t qualified.`
         },
 
         {
@@ -33,10 +39,10 @@ const embed = {
         },
 
         {
-            "name": "📷 **Profile Pictures**",
-            "value": `• No inappropriate profile pictures.
-            • No sexually explicit profile pictures.
-            • No offensive profile pictures.`
+            "name": "📛 **Academic Misconduct**",
+            "value": `- The sale for sale of notes, homework solutions and test answers is strictly prohibited
+            - Posting of brain dump/test bank websites such as CourseHero or Chegg is prohibited
+            - Discussion of AI tools such as ChatGPT for the purposes of cheating is prohibited`
         },
 
         {
@@ -46,69 +52,11 @@ const embed = {
 
         {
             "name":"🏷️ **Advertising/Solicitation**",
-            "value":`• All advertisements for services, clubs or events must be discussed with moderators before posting.
-            • No NFT, Crypto and Financial service advertisements .
-            • Job postings must be posted from official job boards or company webpages.
-            • No advertisements for services in breach of academic misconduct policies.
-            • No advertisements/links for external Discord servers without moderator approval.
-            • All advertisements posted in this server should be open to discussion within this server.
+            "value":`- Advertisements for tutoring services, club events, or individually organized events must be approved by a moderator prior to posting
+            - Job postings must link directly to official job boards or company websites
+            - Advertisement of NFTs, Cryptocurrencies and Financial services is prohibited
+            - Advertisers must be able to discuss the details of the advertisement in the server itself
             `
-        },
-
-        {
-            "name": "\u200B",
-            "value": "\u200B",
-        },
-
-        {
-            "name": "💬 **Text Channels/Chats**",
-            "value": `• No questioning the mods.
-            • @mention the moderators for support.
-            • No @mentioning spam.
-            • No sexually explicit content.
-            • No pornographic content.
-            • No NSFW content.
-            • No illegal content.
-            • No publishing of personal information (including real names, addresses, emails, passwords, bank account and credit card information, etc.).
-            • No personal attacks.
-            • No witch hunting.
-            • No harassment.
-            • No sexism, racism, or any isms.
-            • No hate speech.
-            • No sexual or political discussions.
-            • No flaming.
-            • No trolling.m
-            • No spamming of ANY kind.
-            • Moderators reserve the right to delete any post.
-            • Moderators reserve the right to edit any post.
-            • Use the right text channel for the topic you wish to discuss.`
-        },
-
-        {
-            "name": "\u200B",
-            "value": "\u200B",
-        },
-
-        {
-            "name": "🎤 Voice Channels/Chats",
-            "value": `• No annoying, loud or high pitch noises.
-            • Reduce the amount of background noise, if possible.
-            • Moderators reserve the right to disconnect you from a voice channel if your sound quality is poor.
-            • Moderators reserve the right to disconnect, mute, deafen, or move members to and from voice channels.`,
-        },
-
-        {
-            "name": "\u200B",
-            "value": "\u200B",
-        },
-
-        {
-            "name": "😎 General",
-            "value": `• Moderators reserve the right to use their own discretion regardless of any rule.
-            • No exploiting loopholes in the rules (please report them).
-            • Rules apply to DMing other members of the server.
-            • No bugs, exploits, glitches, hacks, bugs, etc.
-            • Ban evasion is not tolerated. Contact the moderators directly if you believe a ban was in error.`,
         }
     ]
 };
